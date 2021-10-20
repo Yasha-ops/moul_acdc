@@ -1,0 +1,10 @@
+#SQUARE TEST
+square 2
+square -1
+square 4
+square 6
+square 165
+#PYRAMID SQUARE
+pyramid 3
+pyramid -3
+pyramid 0

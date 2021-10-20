@@ -1,0 +1,7 @@
+
+# Utilisation de la moulinette
+
+Remplacer le fichier patterns.ml par le fichier de l'eleve
+
+puis lancer ```make start```
+
