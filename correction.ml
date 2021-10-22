@@ -28,21 +28,10 @@ let square2 n (c1, c2) =
     if n mod 2 = 1 then print_string line1 ;;
 
 
-
-
-let triangle n c =
-  let rec print_triangle = function
-      0 -> ()
-    | i -> (print_triangle (i-1) ;
-            print_string (build_line i c ^ "\n"))
-  in
-    print_newline();
-    print_triangle n;;
-
-
 (* another version *)
 
 let triangle n c =
+    if n < 0 then failwith "triangle : number of lines must be a positive number";
   let rec print_triangle = function
       0 -> ()
     | i -> (print_string (build_line(n-i+1) c ^ "\n");
@@ -85,7 +74,7 @@ let pyramid n (c1, c2) =
 
 
 (************************ Cross: harder! **********************)
-(* without global function build_line *)
+(* without global function build_line*)
 
 let cross n =
   let rec build_line j i =
@@ -109,6 +98,9 @@ let cross n =
 
 
 let cross n (c1, c2) =
+  if n < 0 then
+    ()
+  else
   let aline i =
     let line1 = build_line i c1
     and line2 = build_line (2*(n-i-1)-1) c1

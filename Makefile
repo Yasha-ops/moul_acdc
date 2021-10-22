@@ -1,4 +1,5 @@
 .PHONY:run build perm all start
+
 CC=ocamlfind ocamlc
 LDFLAGS=-syntax camlp4o -package camlp4 -ppopt pa_macro.cmo -linkpkg -package graphics -package unix
 
@@ -13,7 +14,7 @@ $(EXEC):
 correct:
 	$(CC) $(LDILBS) $(LDFLAGS) -o correct correction.ml compare.ml
 
-check: $(EXEC) correct
+check: clean $(EXEC) correct
 	./verif.sh
 
 clean:
