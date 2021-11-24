@@ -2,6 +2,11 @@ INCLUDE "correction/list_tools.ml"
 INCLUDE "correction/gameOfLife.ml"
 
 
+open Graphics ;;            (* Open the module *)
+open_graph "";;             (* Open the window *)
+open_graph " 300x100";;     (* Open 300w × 100h window *)
+
+
 let load name =
     let ic = open_in name in
     let try_read () =
@@ -51,8 +56,8 @@ let print_matrix ch =
 
     for i = 0 to h-1 do
         for j = 0 to w-1 do
-            Printf.fprintf stdout "%i" ch.(i).(j);
-            if (j != w-1) then
+            Printf.fprintf stdout "%i " ch.(i).(j);
+            if (j == w-1) then
                 Printf.fprintf stdout "\n";
         done;
     done;

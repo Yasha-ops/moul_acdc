@@ -1,3 +1,5 @@
+INCLUDE "sandbox.ml"
+
 INCLUDE "correction/list_tools.ml"
 INCLUDE "correction/gameOfLife.ml"
 
@@ -77,9 +79,9 @@ if Array.length Sys.argv != 7 then
     failwith "Not enought arguments. Usage : ./moulinette [FUNC NAME] [BOARD FILE] \
     [ARG1] [ARG2] [ARG3] [ARG4]" ;;
 
-let function_name = Sys.argv.(1)
+let function_name = Sys.argv.(1);;
 
-let filename = Sys.argv.(2)
+let filename = Sys.argv.(2);;
 
 let arg_1 = int_of_string (Sys.argv.(2));;
 let arg_2 = int_of_string (Sys.argv.(3));;
@@ -87,9 +89,6 @@ let arg_3 = int_of_string (Sys.argv.(4));;
 let arg_4 = int_of_string (Sys.argv.(5));;
 
 try
+    draw_board ([[1,2,3], [1,2,3]]) 0;
 with
-    Timeout -> print_endline "Timeout on function";
-
-INCLUDE "sandbox.ml"
-
-
+    Timeout -> print_endline "Timeout on function"
